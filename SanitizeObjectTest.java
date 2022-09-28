@@ -39,7 +39,7 @@ public class SanitizeObjectTest {
             boolean accessible = field.isAccessible();
             field.setAccessible(true);
             Object memVariable = field.get(entity);
-            if(!field.getType().isPrimitive() && memVariable instanceof Collection == false){
+            if(!field.getType().isPrimitive() && memVariable instanceof Collection == false && memVariable instanceof Number ==false){
                 if(field.getType().getSimpleName().equals("String")){
                      memVariable =  memVariable+"testing";//TODO code to sanitize.
                 }
